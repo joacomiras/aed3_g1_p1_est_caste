@@ -53,7 +53,7 @@ void EXTI0_IRQHandler(){
         parking_castelar.modo='n';
     }
 }
-//NORMAL
+//RESTRINGIDO
 void EXTI1_IRQHandler(){
 if(EXTI->PR&(1<<RESTRINGIDO)){
         EXTI->PR|=(1<<RESTRINGIDO);

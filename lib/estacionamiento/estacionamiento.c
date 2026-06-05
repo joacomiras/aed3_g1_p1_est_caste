@@ -95,14 +95,14 @@ void normal(estacionamiento_t *parking){
         teclado.col[i]=parking->columnas[i];
         teclado.fil[i]=parking->filas[i];
     }
-    while(cont>3){
+    while(cont<3){
         if(keypad(&teclado)!='x'){
             numero_ingresado[cont] = ((int)keypad(&teclado)-48);
             cont++;
         }
     }
     for(int i=0;i<3;i++){
-        numero_final=numero_ingresado[2]*100+numero_ingresado[1]*10+numero_ingresado[0];
+        numero_final=numero_ingresado[0]*100+numero_ingresado[1]*10+numero_ingresado[2];
     }
     /* ME FIJO SI SUPERO A LA TOTALIDAD Y SETEO EL SEMAFORO */
     if(autos_totales>=numero_final) {
