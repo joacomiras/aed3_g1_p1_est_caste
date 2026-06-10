@@ -19,7 +19,7 @@ int main(void){
     for(int i=8;i<10;i++){
         parking_castelar.semaforos[i%2]=i;
     }
-    for(int i=8;i<10;i++){
+    for(int i=10;i<12;i++){
         parking_castelar.sensores[i%2]=i;
     }
     

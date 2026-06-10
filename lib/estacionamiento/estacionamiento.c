@@ -101,9 +101,9 @@ void normal(estacionamiento_t *parking){
             cont++;
         }
     }
-    for(int i=0;i<3;i++){
-        numero_final=numero_ingresado[0]*100+numero_ingresado[1]*10+numero_ingresado[2];
-    }
+    
+    numero_final=numero_ingresado[0]*100+numero_ingresado[1]*10+numero_ingresado[2];
+    
     /* ME FIJO SI SUPERO A LA TOTALIDAD Y SETEO EL SEMAFORO */
     if(autos_totales>=numero_final) {
         parking->puerto -> BSRR |= (1<<parking->semaforos[ROJO]);
@@ -128,7 +128,7 @@ void libre(estacionamiento_t *parking){
 void EXTI0IRQHandler(){
     if(EXTI->PR&(1<<0)){
         EXTI->PR|=(1<<0);
-        if(aux->sensores[0]==0) autos_totales++; //pregunto si es una entrada
+        if(aux->sensores[ENTRADA]==0) autos_totales++; //pregunto si es una entrada
         else autos_totales--;
     }
 }
