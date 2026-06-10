@@ -95,7 +95,7 @@ void normal(estacionamiento_t *parking){
         teclado.col[i]=parking->columnas[i];
         teclado.fil[i]=parking->filas[i];
     }
-    while(cont<3){
+    while(cont>3){
         if(keypad(&teclado)!='x'){
             numero_ingresado[cont] = ((int)keypad(&teclado)-48);
             cont++;
